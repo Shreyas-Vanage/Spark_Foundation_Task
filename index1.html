@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <!-- Internal CSS -->
+        <style>
+*{
+    background-color: rgba(0, 0, 0, 0.863);
+    color: rgb(8, 162, 217);
+}
+
+label{
+    font-size:30px;
+}
+.container{
+    text-align: center;
+    margin-top: 10px;
+    height: 100vh;
+}
+
+
+input {
+    border-color: rgb(248, 248, 248);
+    font-size: 20px;
+}
+
+.button{
+background-color: rgb(104, 204, 182);
+color: rgb(238, 225, 225);
+height: auto;
+width: 300px;
+border: 10px;
+padding: 12px;
+border-radius: 10px;
+font-weight: bolder;
+}
+
+.button:hover{
+    background-color: rgb(184, 41, 100);
+    cursor: pointer;
+    color: black;
+    font-weight: bolder;
+}
+
+        </style>
+
+<!-- Internal Javascript -->
+<script>
+
+const convertFahrenheit = () => {
+    var celsius = parseFloat(document.querySelector("#celsius").value);
+
+    var fahrenheitResult = (1.8 * celsius) + 32;
+    var a = fahrenheitResult.toFixed(2);
+
+    document.querySelector("#celsius").value = celsius;
+    document.querySelector("#fahrenheit").value = a;
+}
+
+const convertCelsius = () => {
+    var fahrenheit = parseFloat(document.querySelector("#fahrenheit").value);
+
+    var celsiusResult = (fahrenheit - 32) / 1.8;
+    var b = celsiusResult.toFixed(2);
+
+    document.querySelector("#celsius").value = b;
+    document.querySelector("#fahrenheit").value = fahrenheit;
+}
+
+const reset = () => {
+    document.querySelector("#celsius").value = " ";
+    document.querySelector("#fahrenheit").value = " ";
+}
+
+</script>
+    </head>
+
+    
+<body style="background-color:blue">
+    
+    
+        <div class="container">
+            <h1><font face="arial">:::::  Temperature Converter  <sup>o</sup>C  ==>  <sup>o</sup>F &  <sup>o</sup>F  ==>  <sup>o</sup>C  :::::</font></h1>
+            <br />
+            <br />
+            <label for="celsius"><i><b>Celsius :- </b></i></label>&nbsp;&nbsp;&nbsp;
+            <input id="celsius" type="text" placeholder="Enter in Celsius">&nbsp;&nbsp;&nbsp;
+            <br><br>
+            <button class="button" onclick="convertFahrenheit()">Convert to Fahrenheit</button>
+
+            <br><br><br><br>
+    
+            <label for="Fahrenheit"><i><b>Fahrenheit :- </b></i></label>&nbsp;&nbsp;&nbsp;
+            <input id="fahrenheit" type="text" placeholder="Enter in Fahrenheit">&nbsp;&nbsp;&nbsp;
+            <br><br>
+            <button class="button" onclick="convertCelsius()">Convert to Celsius</button>
+            <br><br><br><br>
+    
+            <button class="button" onclick="reset()">Reset</button>
+            <br />
+            <br />
+        </div>
+        
+       <h1>
+        <marquee bgcolor="black">!! Temperatue Conversion Formulas !!</marquee>
+            <ul type="disc">
+            <li> Celsius to Kelvin :  K = C + 273.15 </li>
+            <br><br>
+
+            <li> Kelvin to Celsius :  C = K - 273.15 </li>
+            <br><br>
+
+            <li> Fahrenheit to Celsius :  C = ( F - 32 ) * ( 5 / 9 ) </li>
+            <br><br>
+
+            <li> Celsius to Fahrenheit :  F = C( 9 / 5 ) + 32 </li>
+            <br><br>
+
+            <li> Fahrenheit to Kelvin :  K = ( F - 32 ) * ( 5 / 9 ) + 273.15 </li>
+            <br><br>
+
+            <li> Kelvin to Fahrenheit :   F = ( K - 273.15 ) * ( 9 / 5 ) + 32 </li>
+            <br><br>
+            </ul>
+        </h1>
+        <footer align="center"><i><b> @ Developed by Shreyas Vanage</b></i></footer>
+    </body>      
+</html>
